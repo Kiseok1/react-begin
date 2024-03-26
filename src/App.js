@@ -117,6 +117,7 @@ function App() {
         setMode('WELCOME');
       }} /></li>
     </>
+    
   } else if (mode === 'CREATE') {
     content = <Create onCreate={(_title,_body) => {
       const newTopic = { id: nextId, title: _title, body: _body }
