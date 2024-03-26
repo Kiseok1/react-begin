@@ -143,7 +143,6 @@ function App() {
         if (newTopics[i].id === id) {
           newTopics[i] = updatedTopic;
           break;
-          
         }
       }
       setTopics(newTopics);
