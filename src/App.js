@@ -135,7 +135,6 @@ function App() {
         body = topics[i].body;
       }
     }
-    
     content = <Update title={title} body={body} onUpdate={(title, body) => {
       console.log(title, body);
       const newTopics = [...topics];
