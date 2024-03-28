@@ -100,7 +100,7 @@ function App() {
         body = topics[i].body;
       }
     }
-    
+
     content = <Article title={title} body={body}></Article>
     contextControl = <>
       <li><a href={"/update" + id} onClick={event => {
@@ -109,7 +109,7 @@ function App() {
       }}>Update</a></li>
       <li><input type="button" value="Delete" onClick={() => {
         const newTopics = [];
-        for (let i = 0; i < topics.length; i++){
+        for (let i = 0; i < topics.length; i++) {
           if (topics[i].id !== id) {
             newTopics.push(topics[i]);
           }
@@ -119,7 +119,7 @@ function App() {
       }} /></li>
     </>
   } else if (mode === 'CREATE') {
-    content = <Create onCreate={(_title,_body) => {
+    content = <Create onCreate={(_title, _body) => {
       const newTopic = { id: nextId, title: _title, body: _body }
       const newTopics = [...topics];
       newTopics.push(newTopic);
@@ -136,12 +136,12 @@ function App() {
         body = topics[i].body;
       }
     }
-    
+
     content = <Update title={title} body={body} onUpdate={(title, body) => {
       console.log(title, body);
       const newTopics = [...topics];
       const updatedTopic = { id: id, title: title, body: body };
-      for (let i = 0; i < newTopics.length; i++){
+      for (let i = 0; i < newTopics.length; i++) {
         if (newTopics[i].id === id) {
           newTopics[i] = updatedTopic;
           break;
@@ -167,10 +167,9 @@ function App() {
           setMode('CREATE');
         }}>Create</a></li>
         {contextControl}
-      </ul>  
+      </ul>
     </div>
   );
 }
-
 
 export default App;
